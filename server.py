@@ -63,7 +63,7 @@ _TRANCHE_EFF = {
 
 def _fmt_base(e: dict) -> dict:
     s = e.get("siege", {})
-    fins = e.get("finances", {})
+    fins = e.get("finances") or {}
     finances_hist = [
         {"annee": a, "chiffre_affaires": fins[a].get("ca"), "resultat_net": fins[a].get("resultat_net")}
         for a in sorted(fins.keys(), reverse=True)
