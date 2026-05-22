@@ -1,0 +1,4 @@
+{
+  "pappers_token": "YOUR_PAPPERS_TOKEN_HERE",
+  "_note": "Free token available at https://www.pappers.fr/api (2-min registration). Without token: partial data only (no balance sheets, no health score, no UBO). Copy this file to config.json and replace the placeholder."
+}
