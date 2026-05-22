@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1] — 2026-05-22
+
+### Fixed
+- `entreprise_search` : correction du crash `AttributeError: 'NoneType' object has no attribute 'keys'`
+  quand l'API Pappers renvoie `"finances": null` explicitement.
+  Correction dans `_fmt_base()` : `e.get("finances", {})` → `e.get("finances") or {}`
+
 ## [2.0.0] — 2026-05-21
 
 ### Added
@@ -12,14 +19,3 @@
 - `entreprise_verifier`: SIREN/SIRET validation with full status
 - Graceful fallback: Pappers → API Recherche when token absent or error
 - `install.ps1`: Windows auto-installer (Python detection, deps, Claude Desktop config)
-- `config.json` token configuration (env var or file)
-
-### Fixed (vs v1)
-- `ModuleNotFoundError: mcp` — now documented in README with fix
-- Multiple Python versions conflict — install.ps1 uses absolute path
-- Missing `pydantic` after Python update — quick repair command documented
-
-## [1.0.0] — Initial version
-
-- Basic SIREN lookup
-- Single API source
